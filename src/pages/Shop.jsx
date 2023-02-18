@@ -70,7 +70,7 @@ function Shop(props) {
       <section>
         <Container>
           <Row>
-            <Col lg="3" md="3">
+            <Col lg="3" md="6" sm="6">
               <div className="filter__widget">
                 <select onClick={handleFilter}>
                   <option>Filter by Category</option>
@@ -82,7 +82,7 @@ function Shop(props) {
                 </select>
               </div>
             </Col>
-            <Col lg="3" md="3">
+            <Col lg="3" md="6" sm="6" className="text-end">
               <div className="filter__widget">
                 <select>
                   <option>Sort by</option>
@@ -91,7 +91,7 @@ function Shop(props) {
                 </select>
               </div>
             </Col>
-            <Col lg="6" md="6">
+            <Col lg="6" md="12" className="">
               <div className="search__box">
                 <input
                   type="text"
