@@ -1,0 +1,87 @@
+.hero__section {
+  background: var(--hero-bg);
+}
+
+.hero__content {
+  padding-top: 45px;
+
+  h2 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin: 20px 0;
+  }
+
+  p {
+    color: var(--primary-color);
+    line-height: 28px;
+    font-size: var(--small-size);
+  }
+
+  p:nth-child(1) {
+    font-weight: 500;
+  }
+}
+
+.hero__subtitle {
+  font-size: var(--small-size);
+}
+
+.buy__btn {
+  border: none;
+  outline: none;
+  padding: 8px 20px;
+  border-radius: 5px;
+  background: var(--primary-color);
+  color: white;
+  cursor: pointer;
+  text-transform: uppercase;
+  margin-top: 40px;
+  font-size: var(--small-size);
+
+  a:hover {
+    color: white;
+  }
+}
+
+.hero__img {
+  img {
+    width: 60%;
+  }
+}
+
+// Timer count
+.timer__count {
+  background: var(--primary-color);
+  height: 300px;
+
+  img {
+    width: 70% !important;
+    height: 70% !important;
+    object-fit: contain;
+  }
+}
+
+.store__btn {
+  background-color: #fff;
+  color: var(--primary-color);
+  font-weight: 600;
+
+  a:hover {
+    color: var(--primary-color);
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .couter__img {
+    display: none;
+  }
+
+  .clock__top-content {
+    text-align: center;
+  }
+
+  .count__down-col {
+    text-align: center;
+  }
+}

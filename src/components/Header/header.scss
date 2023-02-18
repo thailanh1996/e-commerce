@@ -1,0 +1,172 @@
+.header {
+  width: 100%;
+  height: 70px;
+  line-height: 70px;
+}
+
+.nav_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+
+  img {
+    width: 35px;
+    height: 35px;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+  }
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  column-gap: 5rem;
+  margin-bottom: 0;
+}
+
+.nav__item {
+  a {
+    color: var(--primary-color);
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 1.4rem;
+  }
+}
+
+.nav__icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 2.4rem;
+
+  i {
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+
+  .fav__icon,
+  .cart__icon,
+  .avatar__icon {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .badge {
+    position: absolute;
+    top: 25%;
+    right: -45%;
+    content: "";
+    background-color: var(--primary-color);
+    color: #fff;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.6rem;
+    z-index: 10;
+    width: 15px;
+    height: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.mobile__menu {
+  font-size: 2rem;
+  color: var(--primary-color);
+  display: none;
+}
+
+.nav__active {
+  font-weight: 700 !important;
+}
+
+.sticky__header {
+  width: 100%;
+  height: 70px;
+  line-height: 70px;
+  position: sticky;
+  z-index: 999;
+  box-shadow: 3px 3px 8px -3px #ddd;
+  overflow: scroll;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .nav_wrapper {
+    justify-content: unset;
+
+    .logo {
+      flex: 1;
+    }
+  }
+  .navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.53);
+    z-index: 999;
+    display: none;
+  }
+
+  .menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: #fff;
+    z-index: 9999;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .active__menu {
+    display: block;
+  }
+
+  .mobile__menu {
+    display: block;
+    margin-left: 30px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .hero__content {
+    padding-top: 0 !important;
+    padding: 0 10px 0;
+    margin-bottom: 40px;
+  }
+
+  .hero__img {
+    text-align: center;
+  }
+}
