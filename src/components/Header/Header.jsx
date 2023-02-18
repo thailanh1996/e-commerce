@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import "../Header/header.scss";
 import logo from "../../assets/images/eco-logo.png";
 import userIcon from "../../assets/images/user-icon.png";
+import { useSelector } from "react-redux";
 
 const nav_link = [
   {
@@ -25,6 +26,8 @@ const nav_link = [
 function Header(props) {
   const headerRef = useRef();
   const menuRef = useRef();
+  const totalQuantity = useSelector((state) => state.cart.totalQuantity);
+  console.log(totalQuantity);
 
   const stickyHeaderFunc = () => {
     window.addEventListener("scroll", (e) => {
@@ -79,12 +82,12 @@ function Header(props) {
             <div className="nav__icons">
               <span className="fav__icon">
                 <i className="ri-heart-line"></i>
-                <span className="badge">1</span>
+                <span className="badge">2</span>
               </span>
 
               <span className="cart__icon">
                 <i className="ri-shopping-bag-line"></i>
-                <span className="badge">1</span>
+                <span className="badge">{totalQuantity}</span>
               </span>
 
               <span className="avatar__icon">
