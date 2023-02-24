@@ -22,15 +22,11 @@
 .tab__wrapper {
   color: var(--primary-color);
   font-weight: 500;
-  font-style: 1.2rem;
 
   h6 {
     cursor: pointer;
     user-select: none;
-  }
-
-  p {
-    line-height: 30px;
+    font-size: 1.6rem;
   }
 }
 
@@ -44,8 +40,14 @@
     font-weight: 600;
   }
 
+  h6 {
+    font-size: 1.4rem;
+    padding-bottom: 8px;
+  }
+
   ul li p {
     margin-top: 10px;
+    font-size: 1.4rem;
   }
 }
 

@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, current } from "@reduxjs/toolkit";
 
 const initialState = {
   cartItems: [],
@@ -12,6 +12,7 @@ const cartSlice = createSlice({
   reducers: {
     addItem: (state, action) => {
       const newItem = action.payload;
+
       const existingItem = state.cartItems.find(
         (item) => item.id === newItem.id
       );
@@ -37,6 +38,8 @@ const cartSlice = createSlice({
         (total, item) => total + Number(item.price) * Number(item.quantity),
         0
       );
+
+      console.log(current(state));
     },
   },
 });

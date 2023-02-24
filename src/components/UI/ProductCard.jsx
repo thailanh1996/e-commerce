@@ -1,12 +1,11 @@
-import React from "react";
-import productImg from "../../assets/images/arm-chair-01.jpg";
-import "../../style/product-card.scss";
 import { motion } from "framer-motion";
-import { Col } from "reactstrap";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { cartActions } from "../../redux/slices/cartSlice";
 import { toast } from "react-toastify";
+import { Col } from "reactstrap";
+import { cartActions } from "../../redux/slices/cartSlice";
+import "../../style/product-card.scss";
 
 //
 function ProductCard({ item }) {
@@ -18,7 +17,7 @@ function ProductCard({ item }) {
         id: item.id,
         productName: item.productName,
         price: item.price,
-        img: item.imgUrl,
+        image: item.imgUrl,
       })
     );
 

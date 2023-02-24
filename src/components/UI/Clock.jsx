@@ -13,7 +13,7 @@ function Clock(props) {
     const destination = new Date("Feb 25, 2023").getTime();
 
     interval = setInterval(() => {
-      const destination = new Date("Feb 25, 2023").getTime();
+      const destination = new Date("Feb 29, 2023").getTime();
 
       const now = new Date().getTime();
       const different = destination - now;

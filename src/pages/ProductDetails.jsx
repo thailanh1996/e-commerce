@@ -38,6 +38,14 @@ function ProductDetails(props) {
 
     const reviewUserName = reviewUser.current.value;
     const reviewUserMsg = reviewMsg.current.value;
+
+    const reviewObj = {
+      userName: reviewUserName,
+      text: reviewUserMsg,
+      rating,
+    };
+
+    console.log(reviewObj);
   };
 
   const addToCart = () => {
