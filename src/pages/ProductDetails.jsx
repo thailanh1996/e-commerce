@@ -45,7 +45,9 @@ function ProductDetails(props) {
       rating,
     };
 
-    console.log(reviewObj);
+    toast.success("Review successfully!");
+
+    // console.log(reviewObj);
   };
 
   const addToCart = () => {
@@ -159,6 +161,7 @@ function ProductDetails(props) {
                               type="text"
                               placeholder="Enter name"
                               ref={reviewUser}
+                              required
                             />
                           </div>
 
@@ -201,6 +204,7 @@ function ProductDetails(props) {
                               row={4}
                               type="text"
                               placeholder="Review message"
+                              required
                             />
                           </div>
 
