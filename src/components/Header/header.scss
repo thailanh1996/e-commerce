@@ -56,10 +56,34 @@
     cursor: pointer;
   }
 
-  img {
+  .profile img {
     width: 30px;
     height: 30px;
     cursor: pointer;
+    border-radius: 50%;
+  }
+
+  .profile {
+    position: relative;
+    z-index: 9;
+  }
+
+  .profile .profile__actions {
+    position: absolute;
+    top: 87%;
+    left: -19px;
+    width: 76px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: var(--card-bg-01);
+    display: none;
+    cursor: pointer;
+  }
+
+  .show__profileActions {
+    display: flex !important;
   }
 
   .fav__icon,

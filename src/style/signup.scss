@@ -1,0 +1,25 @@
+.form__group {
+  input {
+    margin-bottom: 10px;
+  }
+
+  .input__label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: 100px;
+    border-radius: 5px;
+    user-select: none;
+  }
+
+  .input__label i {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+  }
+
+  .input__label span {
+    color: var(--primary-color);
+    margin-left: 8px;
+  }
+}

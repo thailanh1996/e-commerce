@@ -7,6 +7,7 @@ import Signup from "../pages/Signup.jsx";
 import ProductDetails from "../pages/ProductDetails.jsx";
 import Cart from "../pages/Cart.jsx";
 import { Navigate, Route, Routes } from "react-router-dom";
+import ProtectRouter from "./ProtectRouter.js";
 
 function Routers(props) {
   return (
@@ -16,7 +17,14 @@ function Routers(props) {
       <Route path="shop" element={<Shop />} />
       <Route path="shop/:id" element={<ProductDetails />} />
       <Route path="cart" element={<Cart />} />
-      <Route path="checkout" element={<Checkout />} />
+      <Route
+        path="checkout"
+        element={
+          <ProtectRouter>
+            <Checkout />
+          </ProtectRouter>
+        }
+      />
       <Route path="login" element={<Login />} />
       <Route path="signup" element={<Signup />} />
     </Routes>
