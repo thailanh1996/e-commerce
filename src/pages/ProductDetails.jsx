@@ -117,9 +117,7 @@ function ProductDetails(props) {
                         <i className="ri-star-half-fill"></i>
                       </span>
                     </div>
-                    <p>
-                      (<span>{avgRating}</span> ratings)
-                    </p>
+                    <p>{/* (<span>{avgRating}</span> ratings) */}</p>
                   </div>
 
                   <span className="product__price">${price}</span>
@@ -153,7 +151,7 @@ function ProductDetails(props) {
                     className={`${tab === "rev" ? "active__tab" : ""}`}
                     onClick={() => setTab("rev")}
                   >
-                    Review ({reviews.length})
+                    {/* Review ({reviews.length}) */}
                   </h6>
                 </div>
 
@@ -164,7 +162,7 @@ function ProductDetails(props) {
                 ) : (
                   <div className="product__review mt-4">
                     <div className="review__wrapper">
-                      <ul>
+                      {/* <ul>
                         {reviews.map((item, index) => (
                           <li key={index} className="mb-4">
                             <h6>John Doe</h6>
@@ -172,7 +170,7 @@ function ProductDetails(props) {
                             <p>{item.text}</p>
                           </li>
                         ))}
-                      </ul>
+                      </ul> */}
 
                       <div className="review__form">
                         <h4>Leave your experience</h4>

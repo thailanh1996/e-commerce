@@ -4,11 +4,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { Col } from "reactstrap";
+import useGetData from "../../custom-hook/useGetData";
 import { cartActions } from "../../redux/slices/cartSlice";
 import "../../style/product-card.scss";
 
 //
 function ProductCard({ item }) {
+  const { data: products } = useGetData("products");
+
+  console.log(products);
+
   const dispatch = useDispatch();
 
   const addToCart = () => {
