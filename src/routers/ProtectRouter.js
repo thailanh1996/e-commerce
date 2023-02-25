@@ -1,12 +1,12 @@
 import React from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate, Outlet, useNavigate } from "react-router-dom";
 import useAuth from "../custom-hook/useAuth";
 
-function ProtectRouter({ children }) {
+function ProtectRouter() {
   const navigate = useNavigate();
   const { currentUser } = useAuth();
 
-  return currentUser ? children : <Navigate to="/login" />;
+  return currentUser ? <Outlet /> : <Navigate to="/login" />;
 }
 
 export default ProtectRouter;

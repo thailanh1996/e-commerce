@@ -1,0 +1,84 @@
+.admin__header {
+  width: 100%;
+  height: auto;
+  background: var(--primary-color);
+  padding: 20px 0 !important;
+}
+
+.admin__nav-top {
+  width: 100%;
+
+  .logo h2 {
+    color: whitesmoke;
+  }
+}
+
+.admin__nav-wrapper-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 3rem;
+
+  .search__box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .search__box span i {
+    color: whitesmoke;
+    font-size: 1.4rem;
+  }
+}
+
+.admin__nav-top-right {
+  display: flex;
+  align-items: center;
+  column-gap: 2rem;
+
+  img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+
+  span i {
+    color: whitesmoke;
+    font-size: 1.4rem;
+  }
+}
+
+.admin__menu {
+  background: var(--card-bg-02);
+  width: 100%;
+  height: 70px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+
+  .admin__navigation {
+    text-align: center;
+  }
+
+  .admin__menu-list {
+    display: flex;
+    align-items: center;
+    column-gap: 2.7rem;
+    justify-content: center;
+    margin-bottom: 0;
+  }
+
+  .admin__menu-list .admin__menu-item a {
+    color: var(--primary-color);
+    font-weight: 600;
+    padding: 7px 10px;
+    border-radius: 5px;
+  }
+
+  .active__admin-menu {
+    background: whitesmoke;
+  }
+
+  .admin__menu-item {
+  }
+}

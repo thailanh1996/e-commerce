@@ -1,31 +1,52 @@
-import React, { useRef, useState } from "react";
+import { doc, getDoc } from "firebase/firestore";
+import { motion } from "framer-motion";
+import React, { useEffect, useRef, useState } from "react";
+import { useDispatch } from "react-redux";
+import { useParams } from "react-router-dom";
+import { toast } from "react-toastify";
+import { Col, Container, Row } from "reactstrap";
 import Helmet from "../components/Helmet/Helmet";
 import CommonSection from "../components/UI/CommonSection";
-import { Container, Row, Col } from "reactstrap";
-import { useParams } from "react-router-dom";
-import products from "../assets/data/products";
-import "../style/product-details.scss";
-import { motion } from "framer-motion";
 import ProductList from "../components/UI/ProductList";
-import { useDispatch } from "react-redux";
+import useGetData from "../custom-hook/useGetData";
+import { db } from "../firebase.config";
 import { cartActions } from "../redux/slices/cartSlice";
-import { toast } from "react-toastify";
+import "../style/product-details.scss";
 
 function ProductDetails(props) {
+  const [product, setProduct] = useState({});
   const { id } = useParams();
-  const product = products.find((item) => item.id === id);
+  // const product = products.find((item) => item.id === id);
   const [tab, setTab] = useState("desc");
   const [rating, setRating] = useState(null);
   const reviewUser = useRef("");
   const reviewMsg = useRef("");
   const dispatch = useDispatch();
 
+  const { data: products } = useGetData("products");
+
+  const docRef = doc(db, "products", id);
+
+  useEffect(() => {
+    const getProduct = async () => {
+      const docSnap = await getDoc(docRef);
+
+      if (docSnap.exists()) {
+        setProduct(docSnap.data());
+      } else {
+        console.log("No product!");
+      }
+    };
+
+    getProduct();
+  }, []);
+
   const {
     imgUrl,
     productName,
     price,
-    avgRating,
-    reviews,
+    // avgRating,
+    // reviews,
     description,
     shortDesc,
     category,

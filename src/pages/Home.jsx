@@ -4,7 +4,7 @@ import Helmet from "../components/Helmet/Helmet";
 import "../style/home.scss";
 
 import { Link } from "react-router-dom";
-import { Col, Container, Row } from "reactstrap";
+import { Col, Container, Row, Spinner } from "reactstrap";
 import heroImg from "../assets/images/hero-img.png";
 import counterImg from "../assets/images/counter-timer-img.png";
 
@@ -12,9 +12,12 @@ import Services from "../Services/Services";
 import ProductList from "../components/UI/ProductList";
 import products from "../assets/data/products";
 import Clock from "../components/UI/Clock";
+import useGetData from "../custom-hook/useGetData";
 
 //
 function Home(props) {
+  const { data: products, loading } = useGetData("products");
+
   const [treadingProducts, setTrendingProducts] = useState([]);
   const [bestProducts, setBestProducts] = useState([]);
   const [mobileProducts, setMobileProducts] = useState([]);
@@ -50,7 +53,7 @@ function Home(props) {
     setMobileProducts(filterMobileProducts);
     setWirelessProducts(filterWirelessProducts);
     setPopularProducts(filterPopularProducts);
-  }, []);
+  }, [products]);
 
   return (
     <Helmet title={"Home"}>
@@ -90,7 +93,13 @@ function Home(props) {
             <Col lg="12" className="text-center mb-5">
               <h2 className="section__title">Treding Products</h2>
             </Col>
-            <ProductList data={treadingProducts} />
+            {loading ? (
+              <Col lg="12" className="text-center">
+                <Spinner>Loading...</Spinner>
+              </Col>
+            ) : (
+              <ProductList data={treadingProducts} />
+            )}
           </Row>
         </Container>
       </section>
@@ -101,7 +110,13 @@ function Home(props) {
             <Col lg="12" className="text-center mb-5">
               <h2 className="section__title">Best Sales</h2>
             </Col>
-            <ProductList data={bestProducts} />
+            {loading ? (
+              <Col lg="12" className="text-center">
+                <Spinner>Loading...</Spinner>
+              </Col>
+            ) : (
+              <ProductList data={bestProducts} />
+            )}
           </Row>
         </Container>
       </section>
@@ -137,8 +152,26 @@ function Home(props) {
             <Col lg="12" className="text-center mb-5">
               <h2 className="section__title">New Arrivals</h2>
             </Col>
-            <ProductList data={mobileProducts} />
-            <ProductList data={wirelessProducts} />
+
+            {loading ? (
+              <Col lg="12" className="text-center">
+                <Spinner>Loading...</Spinner>
+              </Col>
+            ) : (
+              <>
+                <ProductList data={mobileProducts} />
+              </>
+            )}
+
+            {loading ? (
+              <Col lg="12" className="text-center">
+                <Spinner>Loading...</Spinner>
+              </Col>
+            ) : (
+              <>
+                <ProductList data={wirelessProducts} />
+              </>
+            )}
           </Row>
         </Container>
       </section>
@@ -150,7 +183,16 @@ function Home(props) {
             <Col lg="12" className="text-center mb-5">
               <h2 className="section__title">Population in Category</h2>
             </Col>
-            <ProductList data={popularProducts} />
+
+            {loading ? (
+              <Col lg="12" className="text-center">
+                <Spinner>Loading...</Spinner>
+              </Col>
+            ) : (
+              <>
+                <ProductList data={popularProducts} />
+              </>
+            )}
           </Row>
         </Container>
       </section>
